@@ -6,7 +6,7 @@
 
 class environment : public shape{
 public:
-//    virtual int maxVisitors() = 0;              // calcs and returns max number of people allowed at habitat
+//    virtual int maxVisitors() = 0;            // calcs and returns max number of people allowed at habitat
     virtual void setTemp() = 0;                 // will return the temperature needed for habitat
     coord pos;
 protected:

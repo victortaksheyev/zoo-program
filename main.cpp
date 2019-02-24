@@ -9,6 +9,7 @@
 #include "birdHab.h"
 #include "tigerHab.h"
 #include "elephantHab.h"
+#include "habCost.h"
 
 using namespace std;
 
@@ -65,7 +66,8 @@ int main() {
     }
     e1.print();
     
-    
+    habitatCost asd;
+    asd.costOfHabs();
     
     
     
