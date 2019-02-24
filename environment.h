@@ -2,18 +2,14 @@
 #define environment_h
 
 #include "coord.h"
+#include "shape.h"
 
-class environment {
+class environment : public shape{
 public:
-    virtual double area() const = 0;          // calcs and returns size based on the number and type of animals
-    virtual double perimeter() const = 0;     // calcs and returns dimensions based on area and shape of habitat
-//    virtual int maxVisitors() = 0;      // calcs and returns max number of people allowed at habitat
-//    virtual int timesToClean() = 0;     // returns number of times to clean depending on animals and amount
-//    coord pos;                          // refers to its center
-    
+//    virtual int maxVisitors() = 0;              // calcs and returns max number of people allowed at habitat
+    virtual void setTemp() = 0;                 // will return the temperature needed for habitat
+    coord pos;
 protected:
-    double width;
-    double length;
     double temp;
 };
 

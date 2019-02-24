@@ -47,29 +47,27 @@ int main() {
     
     infile.close();
     
-    birdHab b1;
+    birdHab b1;                                             // bird habitat object
     for (int i = 0; i < numOfAnimals(animal, 'b'); i++) {
-        b1.bird[i] = animal[i];                           // store animal info from file into class
+        b1.bird[i] = animal[i];                             // store animal info from file into bird habitat
     }
     b1.print();
-    
+
     tigerHab t1;
     for (int i = 0; i < numOfAnimals(animal, 't'); i++) {
-        t1.tiger[i] = animal[i];                           // store animal info from file into class
+        t1.tiger[i] = animal[i];                           // store animal info from file into tiger habitat
     }
     t1.print();
     
     elephantHab e1;
     for (int i = 0; i < numOfAnimals(animal, 'e'); i++) {
-        e1.elephant[i] = animal[i];
+        e1.elephant[i] = animal[i];                         // store animal info from file into elephant habitat
     }
     e1.print();
     
     
-
     
-//    tigerHab t1;
-//    t1.print();
+    
     
     return 0;
 }
