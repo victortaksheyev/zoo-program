@@ -17,6 +17,7 @@ public:
     void setTemp();
     double getArea() const {return area;}
     double getPerimeter() const {return perimeter;}
+    int getNumBirds() {return numBirds;}
     double getTemp() const {return temp;};
     void foodType();    // declares type of food that needs to be delivered to habitat (grain, meat, both)
     animals bird[TOTAL_BIRDS];
@@ -35,6 +36,7 @@ birdHab::birdHab(){
 
 void birdHab::print() {
     std::cout << std::endl;
+    std::cout << "-------------- BIRD HABITAT INFO --------------" << std::endl;
     std::cout << "Area: " << area << " square m" << std::endl;
     std::cout << "Shape: circle" << std::endl;
     std::cout << "Perimeter: " << perimeter << " m" << std::endl;

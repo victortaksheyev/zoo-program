@@ -14,6 +14,7 @@ public:
     void setPerimeter();
     double getArea() const {return area;}
     double getPerimeter() const {return perimeter;}
+    int getNumElephants() {return numElephants;}
     void print() const;
     void setTemp();
     double getTemp() const {return temp;};
@@ -41,6 +42,7 @@ void elephantHab::setPerimeter()  {
 
 void elephantHab::print() const {
     std::cout << std::endl;
+    std::cout << "-------------- ELEPHANT HABITAT INFO --------------" << std::endl;
     std::cout << "Area: " << getArea() << " square m" <<std::endl;
     std::cout << "Shape: square" << std::endl;
     std::cout << "Perimeter: " << getPerimeter() << " m" << std::endl;
@@ -58,7 +60,5 @@ void elephantHab::print() const {
 void elephantHab::setTemp() {
     temp = MAX_ELEPHANT_TEMP - (NUM_OF_ELEPHANTS * .5);   // decreases temperature by .5 degree for each elephant
 }
-
-
 
 #endif /* elephantHab_h */

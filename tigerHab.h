@@ -16,6 +16,7 @@ public:
     double getPerimeter() const {return perimeter;}
     void setTemp();
     double getTemp() const {return temp;}
+    int getNumTigers() {return numTigers;}
     void print() const;
     animals tiger[NUM_OF_TIGERS];
 private:
@@ -42,6 +43,7 @@ void tigerHab::setPerimeter() {
 
 void tigerHab::print() const {
     std::cout << std::endl;
+    std::cout << "-------------- TIGER HABITAT INFO --------------" << std::endl;
     std::cout << "Area: " << getArea() << " m squared" << std::endl;
     std::cout << "Shape: square" << std::endl;
     std::cout << "Perimeter: " << getPerimeter() << " m" <<  std::endl;
@@ -57,6 +59,6 @@ void tigerHab::print() const {
 }
 
 void tigerHab::setTemp() {
-    temp = MAX_TIGER_TEMP + (NUM_OF_TIGERS * 2);
+    temp = MAX_TIGER_TEMP - (NUM_OF_TIGERS * .3);
 }
 #endif /* tigerHab_h */

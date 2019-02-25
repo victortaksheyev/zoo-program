@@ -5,17 +5,18 @@
 
 #include "animals.h"
 #include "environment.h"
-#include "coord.h"
 #include "birdHab.h"
 #include "tigerHab.h"
 #include "elephantHab.h"
+#include "zooCost.h"
 #include "habCost.h"
+#include "operationCost.h"
 
 using namespace std;
 
 const int NUM_OF_ANIMALS = 30;
 
-int numOfAnimals(const animals* animal, char animalChar);
+int numOfAnimals( animals* animal, char animalChar);
 
 int main() {
     animals animal[NUM_OF_ANIMALS];
@@ -24,7 +25,6 @@ int main() {
     infile.open("/Users/victortaksheyev/Desktop/input_animalInfo");
     
     string templine, tempName, tempSpecies, tempAge, tempGender, tempDiet;
-    
     
     for (int i = 0; i < NUM_OF_ANIMALS; i++) {
         getline(infile, templine, '\n');    // gets one line from input file
@@ -59,23 +59,21 @@ int main() {
         t1.tiger[i] = animal[i];                           // store animal info from file into tiger habitat
     }
     t1.print();
-    
+
     elephantHab e1;
     for (int i = 0; i < numOfAnimals(animal, 'e'); i++) {
         e1.elephant[i] = animal[i];                         // store animal info from file into elephant habitat
     }
     e1.print();
-    
-    habitatCost asd;
-    asd.costOfHabs();
-    
-    
-    
+
+    zooCost zooExpenses;
+    zooExpenses.print();
+
     return 0;
 }
 
 // returns number of desired animals that exist in the list
-int numOfAnimals(const animals* animal, char animalChar) {
+int numOfAnimals(animals* animal, char animalChar) {
     int count = 0;
     for (int i = 0; i < NUM_OF_ANIMALS; i++) {
         if (animalChar == 'b') {
