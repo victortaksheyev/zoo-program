@@ -1,6 +1,6 @@
 #ifndef operationCost_h
 #define operationCost_h
-// const associated with any type of zoo / facility
+// cost associated with any type of zoo / facility
 class operationCost {
 public:
     operationCost();
@@ -13,19 +13,5 @@ protected:
     double employeeCost;    // cost of labor
     double yrCost;          // total cost per year
 };
-
-operationCost::operationCost() {
-    tax = .20;              // 20 percet
-    landCost = 50;          // 50 dollars per square meter
-    employeeCost = 300000;  // average salary of 15$ an hour
-    landAmount = 100;       // 100 meters squared of regular zoo land (without habitats atm)
-                            // this land is for sidewalks, etc
-    yearlyCost();
-}
-
-// yearlyCost purely from
-void operationCost::yearlyCost() {
-    yrCost = (1+tax) * ((landAmount * landCost) + employeeCost);
-}
 
 #endif /* operationCost_h */

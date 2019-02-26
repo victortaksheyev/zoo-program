@@ -1,5 +1,6 @@
 #ifndef shape_h
 #define shape_h
+
 class shape {
 public:
     virtual void setArea() = 0;            // calcs and returns size based on the number and type of animals

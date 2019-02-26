@@ -1,0 +1,1 @@
+g++ main.cpp animals.cpp birdHab.cpp elephantHab.cpp habCost.cpp operationCost.cpp tigerHab.cpp zooCost.cpp
