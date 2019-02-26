@@ -22,4 +22,4 @@ private:
     char diet;      // herbavore (h) or carnivore (c)
 };
 
-#endif /* animal_h */
+#endif

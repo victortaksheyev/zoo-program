@@ -1,17 +1,19 @@
 #ifndef operationCost_h
 #define operationCost_h
+
 // cost associated with any type of zoo / facility
 class operationCost {
 public:
     operationCost();
-    void yearlyCost();
-    virtual void costOfHabs() = 0;         // cost of maintaining habitat
+    virtual void habExpenses() = 0;  // defining the expenses associated with the habitat (varies among habitats)
+    virtual void foodExpenses() = 0; // defines food expenses (differ from habitat to habitat)
+    virtual void setTax(double);
+    virtual void setLandCost(double);
+    double getTax();
+    double getLandCost();
 protected:
     double tax;
-    double landCost;        // const of land
-    double landAmount;
-    double employeeCost;    // cost of labor
-    double yrCost;          // total cost per year
+    double landCost;                // const of land
 };
 
-#endif /* operationCost_h */
+#endif 

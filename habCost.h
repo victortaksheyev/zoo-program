@@ -6,24 +6,23 @@
 #include "tigerHab.h"
 #include "birdHab.h"
 
-const int GRAIN_COST = 3; // 3 dollars per day per animal
-const int MEAT_COST = 10; // 10 dollars a day per animal
-
 // calculates cost of all the habitats
-class habitatCost : public operationCost {
+class herbHabCost : public operationCost, public elephantHab, public birdHab, public tigerHab {
 public:
-    void costOfHabs();
-    void costOfFood();
-    double getHabsCost() const {return habsCost;}
-    double getFoodCost() const {return foodCost;}
-    elephantHab eHab;       // creating objects of all habitats
-    birdHab bHab;
-    tigerHab tHab;
+    herbHabCost();
+    void habExpenses();
+    void foodExpenses();
+    double getHabsCost();      // herb hab expenses
+    double getFoodCost();
+    void setGrainPrice(double);
+    void setMeatPrice(double);
+    double getMeatCost();
+
 protected:
-    double habsCost;        // cost of a hab per year;
-    double foodCost;
+    double habCost;             // cost of a hab per year;
+    double foodCost;            // total price of food
+    double grainPrice;
+    double meatPrice;
 };
 
-
-
-#endif /* habCost_h */
+#endif

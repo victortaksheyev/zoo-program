@@ -1,6 +1,10 @@
 #include <math.h> // sqrt
 #include "animals.h"
 #include "tigerHab.h"
+#include "environment.h"
+
+const int MAX_TIGER_TEMP = 50;
+const int METERS_PER_TIGER = 25; // each tiger needs 25 meters squared of space
 
 double tigerHab::getArea() const {
     return area;
@@ -18,8 +22,8 @@ double tigerHab::getTemp() const {
     return temp;
 }
 
-void environment::maxVisitors() {
-    maxPeople = perimeter/3;
+void tigerHab::maxVisitors() {
+    maxPeople = perimeter / 3;
 }
 
 tigerHab::tigerHab() {
@@ -27,15 +31,16 @@ tigerHab::tigerHab() {
     numTigers = 0;
     numTigers = NUM_OF_TIGERS;
     setTemp();
-    setArea();
-    setPerimeter();
+    createArea();
+    createPerimeter();
+    maxVisitors();
 }
 
-void tigerHab::setArea() {
-    area =  METERS_PER_TIGER * numTigers;
+void tigerHab::createArea() {
+    area = METERS_PER_TIGER * numTigers;
 }
 
-void tigerHab::setPerimeter() {
+void tigerHab::createPerimeter() {
     perimeter = sqrt(area) * 4;
 }
 
@@ -46,8 +51,7 @@ void tigerHab::print() const {
     std::cout << "Shape: square" << std::endl;
     std::cout << "Perimeter: " << getPerimeter() << " m" <<  std::endl;
     std::cout << "Food type: " << food << std::endl;
-    std::cout << "Amount of food: 10" << std::endl;
-    std::cout << "Max visitors: 10" << std::endl;
+    std::cout << "Max visitors: " << maxPeople << std::endl;
     std::cout << "Temperature: " << getTemp() << std::endl;
     std::cout << std::endl;
     std::cout << "Information about the tigers at the zoo: " << std::endl << std::endl;

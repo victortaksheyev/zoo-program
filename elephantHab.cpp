@@ -4,6 +4,9 @@
 #include <iostream>
 #include <math.h>
 
+const int METERS_PER_ELEPHANT = 40; // each bird needs 3 meters squared of space
+const int MAX_ELEPHANT_TEMP = 70;
+
 double elephantHab::getArea() const {
     return area;
 }
@@ -20,23 +23,24 @@ double elephantHab::getTemp() const {
     return temp;
 }
 
-void environment::maxVisitors() {
-    maxPeople = perimeter/7;
-}
-
 elephantHab::elephantHab() {
     food = "grain";
     numElephants = NUM_OF_ELEPHANTS;
     setTemp();
-    setArea();
-    setPerimeter();
+    createArea();
+    createPerimeter();
+    maxVisitors();
 }
 
-void elephantHab::setArea() {
+void elephantHab::maxVisitors() {
+    maxPeople = perimeter / 2;
+}
+
+void elephantHab::createArea() {
     area = numElephants * METERS_PER_ELEPHANT;
 }
 
-void elephantHab::setPerimeter()  {
+void elephantHab::createPerimeter()  {
     perimeter = sqrt(area) * 4; // square
 }
 
@@ -47,7 +51,6 @@ void elephantHab::print() const {
     std::cout << "Shape: square" << std::endl;
     std::cout << "Perimeter: " << getPerimeter() << " m" << std::endl;
     std::cout << "Food type: " << food << std::endl;
-    std::cout << "Amount of food: 10" << std::endl;
     std::cout << "Max visitors: " << maxPeople << std::endl;
     std::cout << "Temperature: " << getTemp() << std::endl;
     std::cout << std::endl;

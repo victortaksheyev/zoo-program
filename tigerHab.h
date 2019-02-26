@@ -3,15 +3,13 @@
 
 #include "environment.h"
 
-const int METERS_PER_TIGER = 25; // each bird needs 3 meters squared of space
-const int NUM_OF_TIGERS = 8;
-const int MAX_TIGER_TEMP = 50;
+const int NUM_OF_TIGERS = 8;        // will establish at runtime when I learn about dynamically allocatted mem
 
 class tigerHab : public environment {
 public:
     tigerHab();
-    void setArea();
-    void setPerimeter();
+    void createArea();
+    void createPerimeter();
     double getArea() const;
     double getPerimeter() const;
     void setTemp();
@@ -26,4 +24,4 @@ private:
 };
 
 
-#endif /* tigerHab_h */
+#endif

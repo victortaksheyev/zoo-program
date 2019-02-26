@@ -5,16 +5,14 @@
 #include "environment.h"
 #include "animals.h"
 
-const int METERS_PER_BIRD = 3;      // each bird needs 3 meters squared of space
-const int TOTAL_BIRDS = 15;         // will establish at runtime when i learn about dynamically allocatted mem
-const int MAX_BIRD_TEMP = 80;       // max temp birds can handle
+const int TOTAL_BIRDS = 15;         // will establish at runtime when I learn about dynamically allocatted mem
 
 class birdHab : public environment{
 public:
     birdHab();
     void print();
-    void setArea();
-    void setPerimeter();
+    void createArea();
+    void createPerimeter();
     void setTemp();
     double getArea() const;
     double getPerimeter() const;
@@ -29,4 +27,4 @@ private:
 };
 
 
-#endif /* habitat_h */
+#endif

@@ -1,5 +1,9 @@
 #include <math.h>
 #include "birdHab.h"
+#include "environment.h"
+
+const int METERS_PER_BIRD = 3;      // each bird needs 3 meters squared of space
+const int MAX_BIRD_TEMP = 80;       // max temp birds can handle
 
 double birdHab::getArea() const {
     return area;
@@ -21,11 +25,12 @@ birdHab::birdHab(){
     food = "grain";
     numBirds = TOTAL_BIRDS;
     setTemp();
-    setArea();
-    setPerimeter();
+    createArea();
+    createPerimeter();
+    maxVisitors();
 }
 
-void environment::maxVisitors() {
+void birdHab::maxVisitors() {
     maxPeople = (perimeter * 2);
 }
 
@@ -36,8 +41,7 @@ void birdHab::print() {
     std::cout << "Shape: circle" << std::endl;
     std::cout << "Perimeter: " << perimeter << " m" << std::endl;
     std::cout << "Food type: " << food << std::endl;
-    std::cout << "Amount of food: 10" << std::endl;
-    std::cout << "Max visitors: 10" << std::endl;
+    std::cout << "Max visitors: " << maxPeople << std::endl;
     std::cout << "Temperature: " << getTemp() << std::endl;
     std::cout << std::endl;
     std::cout << "Information about the birds at the zoo: " << std::endl << std::endl;
@@ -46,11 +50,11 @@ void birdHab::print() {
     }
 }
 
-void birdHab::setArea() {
+void birdHab::createArea() {
     area = METERS_PER_BIRD * numBirds;      // area depends on number of birds
 }
 
-void birdHab::setPerimeter() {
+void birdHab::createPerimeter() {
     perimeter = sqrt((area/M_PI))*2*M_PI;      // calculates circumference of circle
 }
 

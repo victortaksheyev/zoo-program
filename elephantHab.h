@@ -5,15 +5,13 @@
 #include "environment.h"
 #include "animals.h"
 
-const int METERS_PER_ELEPHANT = 40; // each bird needs 3 meters squared of space
-const int NUM_OF_ELEPHANTS = 7;
-const int MAX_ELEPHANT_TEMP = 70;
+const int NUM_OF_ELEPHANTS = 7;     // will establish at runtime when I learn about dynamically allocatted mem
 
 class elephantHab : public environment {
 public:
     elephantHab();
-    void setArea();
-    void setPerimeter();
+    void createArea();
+    void createPerimeter();
     double getArea() const;
     double getPerimeter() const;
     int getNumElephants();
@@ -27,4 +25,4 @@ private:
     int numElephants;
 };
 
-#endif /* elephantHab_h */
+#endif

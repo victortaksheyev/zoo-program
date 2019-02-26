@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 animals::animals() {
     name = "";
@@ -40,7 +41,7 @@ void animals::setDiet(char usrDiet) {
 }
 
 void animals::print() const {
-    std::cout << name << " --- ";
+    std::cout << std::setw(8) << name << " --- ";
     std::cout << "Age: " << age << " | ";
     std::cout << "Gender: " << gender << " | ";
     std::cout << "Diet: " << diet << std::endl;
