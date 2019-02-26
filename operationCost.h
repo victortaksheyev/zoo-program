@@ -1,7 +1,18 @@
 #ifndef operationCost_h
 #define operationCost_h
 
-// cost associated with any type of zoo / facility
+/*
+ * class_identifier: initializes typical operationCosts that are used by habitats and zoo
+ * constructors:     operationCost();
+ * public functions: virtual void habExpenses() = 0;
+                     virtual void foodExpenses() = 0;
+                     virtual void setTax(double);
+                     virtual void setLandCost(double);
+                     double getTax();
+                     double getLandCost();
+ * static members: none
+ */
+
 class operationCost {
 public:
     operationCost();

@@ -1,37 +1,42 @@
 #include "habCost.h"
 
-herbHabCost::herbHabCost() {
+// constructor, initializing values
+habitatCost::habitatCost() {
     habExpenses();
     foodExpenses();
     grainPrice = 3;
     meatPrice = 5;
 }
 
-void herbHabCost::setGrainPrice(double usrGCost) {
+// setter for grain price
+void habitatCost::setGrainPrice(double usrGCost) {
     grainPrice = usrGCost;
 }
 
-void herbHabCost::setMeatPrice(double usrMCost) {
+// setter for meat price
+void habitatCost::setMeatPrice(double usrMCost) {
     meatPrice = usrMCost;
 }
 
-void herbHabCost::habExpenses() {
+// calcs cost of land and tax based on hab area
+void habitatCost::habExpenses() {
     int totalHabArea = elephantHab::getArea() + birdHab::getArea() + tigerHab::getArea();
-    // calcs cost of land and tax based on hab area
     habCost = (1 + tax) * (totalHabArea * landCost);
 }
 
-void herbHabCost::foodExpenses() {
-    // adds in cost for food (depending on habitat) in a year
+// calcs cost for food (depending on habitat) in a year
+void habitatCost::foodExpenses() {
     foodCost = ((getNumElephants() * grainPrice) + (getNumBirds() * grainPrice) + (getNumTigers() * meatPrice)) * 365;
 }
 
-double herbHabCost::getHabsCost()  {
+// getter for habitat cost
+double habitatCost::getHabsCost()  {
     habExpenses();               // updates before returning in case it was changed
     return habCost;
 }
 
-double herbHabCost::getFoodCost() {
+// getter for food cost of the habitats
+double habitatCost::getFoodCost() {
     foodExpenses();              // updates before returning in case it was changed
     return foodCost;
 }

@@ -1,3 +1,9 @@
+/*
+ * Description: a program to help new zoos test choices to maximize profit
+ * Input: file with a list of animals the zoo will be getting (input_animalInfo)
+ * Output: information about the zoo given certain parameters
+ */
+
 #include <iostream>
 #include <fstream>  // ifstream
 #include <sstream>  // stringstream
@@ -105,7 +111,12 @@ int main() {
     return 0;
 }
 
-// returns number of desired animals that exist in the list
+/*
+ * function_identifier: searches and returns number of desired animals that exist in the list
+ * parameters: animal objects, the species to look for
+ * return value: number of animals that are in the animal object array
+ */
+
 int numOfAnimals(animals* animal, char animalChar) {
     int count = 0;
     for (int i = 0; i < NUM_OF_ANIMALS; i++) {

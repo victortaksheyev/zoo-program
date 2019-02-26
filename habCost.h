@@ -6,10 +6,22 @@
 #include "tigerHab.h"
 #include "birdHab.h"
 
-// calculates cost of all the habitats
-class herbHabCost : public operationCost, public elephantHab, public birdHab, public tigerHab {
+/*
+ * class_identifier: calculates cost of a habitat, taking into account food, area, and other variables
+ * constructors:     herbHabCost();
+ * public functions: void habExpenses();
+                     void foodExpenses();
+                     double getHabsCost();
+                     double getFoodCost();
+                     void setGrainPrice(double);
+                     void setMeatPrice(double);
+                     double getMeatCost();
+ * static members: none
+ */
+
+class habitatCost : public operationCost, public elephantHab, public birdHab, public tigerHab {
 public:
-    herbHabCost();
+    habitatCost();
     void habExpenses();
     void foodExpenses();
     double getHabsCost();      // herb hab expenses

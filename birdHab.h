@@ -7,6 +7,22 @@
 
 const int TOTAL_BIRDS = 15;         // will establish at runtime when I learn about dynamically allocatted mem
 
+/*
+ * class_identifier: initializes and performs operations on bird habitat
+ * constructors:     birdHab();
+ * public functions: void print();
+                     void createArea();
+                     void createPerimeter();
+                     void setTemp();
+                     double getArea() const;
+                     double getPerimeter() const;
+                     int getNumBirds();
+                     void maxVisitors();
+                     double getTemp() const;
+                     void foodType();    // declares type of food that needs to be delivered to habitat (grain, meat, both)
+ * static members: none
+ */
+
 class birdHab : public environment{
 public:
     birdHab();
@@ -25,6 +41,5 @@ private:
     std::string food;
     int numBirds;
 };
-
 
 #endif

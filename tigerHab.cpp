@@ -6,26 +6,32 @@
 const int MAX_TIGER_TEMP = 50;
 const int METERS_PER_TIGER = 25; // each tiger needs 25 meters squared of space
 
+// getter for area
 double tigerHab::getArea() const {
     return area;
 }
 
+// getter for perim
 double tigerHab::getPerimeter() const {
     return perimeter;
 }
 
+// getter for num of tigers
 int tigerHab::getNumTigers() {
     return numTigers;
 }
 
+// getter for temp
 double tigerHab::getTemp() const {
     return temp;
 }
 
+// calcs max visitors based on perimeter
 void tigerHab::maxVisitors() {
     maxPeople = perimeter / 3;
 }
 
+// constructor
 tigerHab::tigerHab() {
     food = "meat";
     numTigers = 0;
@@ -36,14 +42,17 @@ tigerHab::tigerHab() {
     maxVisitors();
 }
 
+// calcs area based on space and number of tigers
 void tigerHab::createArea() {
     area = METERS_PER_TIGER * numTigers;
 }
 
+// calcs perimeter to conform to certain shape
 void tigerHab::createPerimeter() {
     perimeter = sqrt(area) * 4;
 }
 
+// prints info of class
 void tigerHab::print() const {
     std::cout << std::endl;
     std::cout << "-------------- TIGER HABITAT INFO --------------" << std::endl;
@@ -60,6 +69,7 @@ void tigerHab::print() const {
     }
 }
 
+// sets temperature, depending on animal info
 void tigerHab::setTemp() {
     temp = MAX_TIGER_TEMP - (NUM_OF_TIGERS * .3);
 }
